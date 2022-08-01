@@ -100,4 +100,5 @@ mymenuhelp= Menu(menubar, tearoff=0)
 menubar.add_cascade(label="Help",menu=mymenuhelp)
 mymenuhelp.add_command(label="About Notepad",command=showAbout)
 
+root.protocol("WM_DELETE_WINDOW", exit)
 root.mainloop()
