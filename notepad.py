@@ -74,7 +74,6 @@ def copy():
 def paste():
     text.event_generate("<<Paste>>")
 
-
 menubar= Menu(root)
 root.config(menu=menubar)
 
