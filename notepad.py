@@ -13,7 +13,7 @@ def exit():
     if len(str(text.get(0.0,END)))==1:
         root.destroy()
     else:
-        confirm = messagebox.askyesnocancel("Notepad", "Do You want to save?")
+        confirm = askyesnocancel("Notepad", "Do You want to save?")
         if confirm ==True:
             saveas()
             root.destroy()
@@ -26,7 +26,7 @@ def new():
     if len(str(text.get(0.0,END)))==1:
         text.delete(1.0,END)
     else:
-        confirm = messagebox.askyesnocancel("Notepad", "Do You want to save?")
+        confirm = askyesnocancel("Notepad", "Do You want to save?")
         if confirm ==True:
             saveas()
         elif confirm==None:
@@ -41,13 +41,13 @@ def save():
 
 def saveas():
     global text_file
-    text_file=filedialog.asksaveasfile(initialdir="C:/Users/xXDarkLordXx/Documents", mode='w',defaultextension=".txt")
+    text_file=asksaveasfile(initialdir="C:/Users/xXDarkLordXx/Documents", mode='w',defaultextension=".txt")
     text2save=str(text.get(0.0,END))
     text_file.write(text2save)
 
 def opn():
     global text_file
-    text_file = filedialog.askopenfilename(initialdir="C:/Users/xXDarkLordXx/Documents", title="Open Text File", defaultextension=".txt",
+    text_file = askopenfilename(initialdir="C:/Users/xXDarkLordXx/Documents", title="Open Text File", defaultextension=".txt",
                                   filetypes=[("All Files","*.*"),("Text Documents","*.txt")])
 
     if text_file == "":
